@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221170133) do
+ActiveRecord::Schema.define(version: 20180222070148) do
 
   create_table "answers", force: :cascade do |t|
     t.boolean "correct", default: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20180221170133) do
     t.string "login"
     t.string "password"
     t.string "email"
-    t.boolean "isadmin"
+    t.boolean "isadmin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
