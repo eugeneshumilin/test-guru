@@ -44,3 +44,9 @@ User.create([
               { firstname: 'Alex', lastname: 'Petrov',
                 login: 'apetrov', password: 'pas2', email: 'aaa@bbb1.com', isadmin: true }
             ])
+
+TestsUser.create([
+                   { user_id: 1, test_id: 1 },
+                   { user_id: 1, test_id: 3 },
+                   { user_id: 2, test_id: 2 }
+                 ])
