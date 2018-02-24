@@ -14,13 +14,13 @@ Answer.create([
                 { correct: true, question_id: 2 }
               ])
 
-Category.create([
-                  { title: 'frontend' },
-                  { title: 'backend' },
-                  { title: 'mobile development' },
-                  { title: 'android' },
-                  { title: 'iOS' }
-                ])
+categories = Category.create([
+                               { title: 'frontend' },
+                               { title: 'backend' },
+                               { title: 'mobile development' },
+                               { title: 'android' },
+                               { title: 'iOS' }
+                             ])
 
 Question.create([
                   { body: 'Etiam lacus dui, rutrum sit.', test_id: 1 },
@@ -32,10 +32,10 @@ Question.create([
                 ])
 
 Test.create([
-              { title: 'Ruby', level: 1, category_id: 2 },
-              { title: 'Javascript', category_id: 1 },
-              { title: 'Ruby on Rails', level: 2, category_id: 2 },
-              { title: 'CSS', level: 1, category_id: 1 }
+              { title: 'Ruby', level: 1, category_id: categories[1].id },
+              { title: 'Javascript', category_id: categories[0].id },
+              { title: 'Ruby on Rails', level: 2, category_id: categories[1].id },
+              { title: 'CSS', level: 1, category_id: categories[0].id }
             ])
 
 User.create([
