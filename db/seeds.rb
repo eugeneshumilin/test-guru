@@ -44,9 +44,9 @@ questions = Question.create([
 ])
 
 Answer.create([
-  { correct: true, question_id: questions[0].id },
-  { question_id: questions[1].id },
-  { correct: true, question_id: questions[2].id },
-  { question_id: questions[0].id },
-  { correct: true, question_id: questions[1].id }
+  { correct: true, question_id: questions[0].id, body: 'Morbi rhoncus purus.' },
+  { question_id: questions[1].id, body: 'Nunc mollis elit.' },
+  { correct: true, question_id: questions[2].id, body: 'Nyt osf kalium.' },
+  { question_id: questions[0].id, body: 'Kop ha jui.' },
+  { correct: true, question_id: questions[1].id, body: 'Pur lium gas' }
 ])
