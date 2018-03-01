@@ -5,9 +5,18 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :category
 
-  def self.titles_by_category(category)
-    Test.joins('JOIN categories ON tests.category_id = categories.id').where(
+  scope :level, ->(level) { where(level: level) }
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+
+  scope :by_category, lambda(category) {
+    joins(:category).where(
       categories: { title: category }
-    ).order('tests.title DESC').pluck('title')
+    ).order('tests.title DESC')
+  }
+
+  def self.category_by_title(category)
+    Test.by_category(category).pluck(:title)
   end
 end
