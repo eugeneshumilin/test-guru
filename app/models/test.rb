@@ -10,9 +10,9 @@ class Test < ApplicationRecord
   belongs_to :category
 
   scope :by_level, ->(level) { where(level: level) }
-  scope :easy, -> { where(level: 0..1) }
-  scope :medium, -> { where(level: 2..4) }
-  scope :hard, -> { where(level: 5..Float::INFINITY) }
+  scope :easy, -> { by_level(0..1) }
+  scope :medium, -> { by_level(2..4) }
+  scope :hard, -> { by_level(5..Float::INFINITY) }
 
   scope :by_category, lambda { |category|
     joins(:category).where(
@@ -21,6 +21,6 @@ class Test < ApplicationRecord
   }
 
   def self.category_by_title(category)
-    Test.by_category(category).pluck(:title)
+    by_category(category).pluck(:title)
   end
 end
