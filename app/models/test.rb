@@ -4,18 +4,18 @@ class Test < ApplicationRecord
   validates :title, uniqueness: { scope: :level }
 
   has_many :questions
-  has_many :tests_user
-  has_many :users, through: :tests_user
+  has_many :tests_users
+  has_many :users, through: :tests_users
   belongs_to :author, class_name: 'User'
   belongs_to :category
 
-  scope :level, ->(level) { where(level: level) }
+  scope :by_level, ->(level) { where(level: level) }
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
   scope :by_category, lambda { |category|
-    Test.joins('JOIN categories ON tests.category_id = categories.id').where(
+    joins(:category).where(
       categories: { title: category }
     ).order('tests.title DESC')
   }
