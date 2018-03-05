@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = @test.questions
-    render plain: @questions
+    render inline: '<% @questions.each { |question| %><p><%= question.body %></p><% } %>'
   end
 
   def show
