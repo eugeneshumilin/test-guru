@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    render plain: 'Question was destroyed'
+    redirect_to action: :index
   end
 
   private
