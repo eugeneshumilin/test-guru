@@ -6,22 +6,30 @@ class QuestionsController < ApplicationController
   def show; end
 
   def new
-    @question = @test.questions.new
+    @question = @test.questions.build
   end
 
   def create
-    @question = @test.questions.new(question_params)
+    @question = @test.questions.build(question_params)
 
     if @question.save
-      redirect_to @question
+      redirect_to test_path(@test)
     else
       render :new
     end
   end
 
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @question.destroy
-    redirect_to action: :index
+    redirect_to test_path(@question.test)
   end
 
   private

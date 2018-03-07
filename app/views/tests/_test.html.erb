@@ -1,4 +1,7 @@
 <tr>
   <td><%= test.title %></td>
   <td><%= test.level %></td>
+  <td><%= link_to 'Show', test_path(test) %></td>
+  <td><%= link_to 'Edit', edit_test_path(test) %></td>
+  <td><%= link_to 'Delete', test_path(test), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
 </tr>
