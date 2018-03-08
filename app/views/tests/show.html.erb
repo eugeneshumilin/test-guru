@@ -7,5 +7,8 @@
   </tr>
   <%= render @test.questions %>
 </table><br>
-<h3><%= link_to 'Create new question', new_test_question_path(@test) %></h3><br>
+<h3>
+  <%= link_to 'Create new question', new_test_question_path(@test) %>
+</h3>
+<br>
 <%= link_to 'Back', tests_path %>
