@@ -9,13 +9,13 @@ class AnswersController < ApplicationController
   def show; end
 
   def new
-    @answer = @question.answers.new
+    @answer = @question.answers.build
   end
 
   def edit; end
 
   def create
-    @answer = Answer.new(answer_params)
+    @answer = @question.answers.build(answer_params)
 
     if @answer.save
       redirect_to @answer, notice: 'Answer was successfully created.'

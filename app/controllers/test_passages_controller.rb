@@ -1,11 +1,7 @@
 class TestPassagesController < ApplicationController
+  def show; end
 
-  def show
-  end
+  def result; end
 
-  def result
-  end
-
-  def update
-  end
+  def update; end
 end
