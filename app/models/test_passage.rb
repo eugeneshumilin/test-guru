@@ -3,7 +3,6 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
   before_save :before_save_set_next_question
 
   def successfull_test?
@@ -25,6 +24,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def current_question_number
+    test.questions.count - next_questions.count
+  end
+
   private
 
   def before_validation_set_first_question
@@ -43,7 +46,11 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    next_questions.first
+  end
+
+  def next_questions
+    test.questions.order(:id).where('id > ?', current_question.id)
   end
 
   def before_save_set_next_question

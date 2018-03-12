@@ -1,7 +1,12 @@
 <h1>Passing the <%= @test_passage.test.title %></h1>
 
-<b>
+<h2>
   <%= @test_passage.current_question.body %>
+</h2>
+<br>
+<b>
+  question <%= @test_passage.current_question_number %> of 
+  <%= @test_passage.test.questions.count %>
 </b>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
