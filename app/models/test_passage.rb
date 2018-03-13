@@ -10,13 +10,11 @@ class TestPassage < ApplicationRecord
   end
 
   def test_result_in_percent
-    correct_questions * 100 / test.questions.count
+    correct_questions * 100 / questions_number
   end
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-
-    self.current_question = next_question
     save!
   end
 
@@ -25,7 +23,11 @@ class TestPassage < ApplicationRecord
   end
 
   def current_question_number
-    test.questions.count - next_questions.count
+    questions_number - next_questions.count
+  end
+
+  def questions_number
+    test.questions.count
   end
 
   private
