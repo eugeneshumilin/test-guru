@@ -1,4 +1,5 @@
-<% if logged_in? %>
+<div class="nav user">
+  <% if logged_in? %>
   <p>Welcome, 
     <%= current_user.email %>
     <%= link_to 'Guru', root_path %> |
@@ -10,3 +11,4 @@
     <%= link_to  "sign in", login_path %>
   </p>  
 <% end %>
+</div>
