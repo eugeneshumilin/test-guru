@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      redirect_to login_path, alert: 'Вы должны быть авторизованы'
+      redirect_to login_path, alert: 'Are you Guru? Verify your email and password please!'
     end
   end
 
