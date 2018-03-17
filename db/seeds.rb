@@ -15,10 +15,8 @@ categories = Category.create([
                              ])
 
 users = User.create([
-                      { firstname: 'Ivan', lastname: 'Ivanov',
-                        login: 'iivanov', password: 'pas1', email: 'aaa@bbb.com' },
-                      { firstname: 'Alex', lastname: 'Petrov',
-                        login: 'apetrov', password: 'pas2', email: 'aaa@bbb1.com', isadmin: true }
+                      { password_digest: 'pas1', email: 'aaa@bbb.com' },
+                      { password_digest: 'pas2', email: 'aaa@bbb1.com' }
                     ])
 
 tests = Test.create([
@@ -29,9 +27,9 @@ tests = Test.create([
                     ])
 
 TestPassage.create([
-                   { user_id: users[0].id, test_id: tests[0].id },
-                   { user_id: users[0].id, test_id: tests[2].id },
-                   { user_id: users[1].id, test_id: tests[1].id }
+                     { user_id: users[0].id, test_id: tests[0].id },
+                     { user_id: users[0].id, test_id: tests[2].id },
+                     { user_id: users[1].id, test_id: tests[1].id }
                  ])
 
 questions = Question.create([
