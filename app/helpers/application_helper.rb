@@ -1,4 +1,7 @@
 module ApplicationHelper
+
+  FLASH_TYPE = { alert: 'alert', notice: 'notice' }.freeze
+
   def current_year
     Time.current.year
   end
@@ -7,7 +10,7 @@ module ApplicationHelper
     link_to 'GitHub', "https://github.com/#{author}/#{repo}", target: :blank
   end
 
-  def flash_message(message)
-    content_tag :p, flash[message], class: 'flash alert' if flash[message]
+  def flash_selector(type)
+    FLASH_TYPE[type.to_sym] || type
   end
 end
