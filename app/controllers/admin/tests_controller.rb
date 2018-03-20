@@ -10,7 +10,7 @@ class Admin::TestsController < Admin::BaseController
   def show; end
 
   def new
-    @test = Test.new
+    @test = current_user.own_tests.build
   end
 
   def edit; end
