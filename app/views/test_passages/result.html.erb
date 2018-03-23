@@ -1,6 +1,6 @@
-<h1>The <%= @test_passage.test.title %> test was completed</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <div>
   <%= result_color_and_percent(@test_passage.test_result_in_percent) %>
-</div>  
+</div>
 
