@@ -9,6 +9,10 @@ ru:
   sign_up: "Зарегистрироваться"
   sign_in: "Войти"
 
+  layouts:
+    navbar:
+      admin_root: "Панель администратора"
+
   helpers:
     submit:
       test:
@@ -46,6 +50,7 @@ ru:
     nav:
       header: "Административная панель"
       welcome: "Добро пожаловать %{name}"
+      all_tests: "Тесты"
     tests:
       create:
         success: "Тест успешно создан"

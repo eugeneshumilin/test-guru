@@ -1,6 +1,10 @@
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <%= link_to 'Guru', root_path, class: 'navbar-brand' %>
+  <% if current_user.admin? %>
+    <%= link_to t('.admin_root'), admin_tests_path, class: 'navbar-text' %>
+  <% end %>
   <span class="navbar-text">
+
     <% if user_signed_in? %>
       <p>Welcome,
         <b><%= current_user.email %></b>
