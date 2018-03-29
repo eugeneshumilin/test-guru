@@ -1,5 +1,5 @@
-<h1><%= t('.header') %></h1>
-<table>
+<h3 class='mt-5 mb-3 text-center'><%= t('.header') %></h3>
+<table class="table">
   <tr>
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
@@ -10,4 +10,4 @@
   <%= render @tests %>
 </table>
 <br>
-<h3><%= link_to t('new_test'), new_admin_test_path %></h3>
+<h4 class="text-right"><%= link_to t('new_test'), new_admin_test_path %></h4>
