@@ -1,14 +1,20 @@
-<div class="nav user">
-  <% if user_signed_in? %>
-  <p>Welcome,
-    <%= current_user.email %>
-    <%= link_to 'Guru', root_path %> |
-    <%= link_to t('delete'), destroy_user_session_path, method: :delete %>
-  </p>
-<% else %>
-  <p>
-    <%= link_to  t('sign_up'), new_user_registration_path %> |
-    <%= link_to  t('sign_in'), new_user_session_path %>
-  </p>
-<% end %>
-</div>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <%= link_to 'Guru', root_path, class: 'navbar-brand' %>
+  <% if current_user&.admin? %>
+    <%= link_to t('.admin_root'), admin_tests_path, class: 'navbar-text' %>
+  <% end %>
+  <span class="navbar-text">
+
+    <% if user_signed_in? %>
+      <p>Welcome,
+        <b><%= current_user.email %></b>
+        <%= link_to t('logout'), destroy_user_session_path, method: :delete %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to  t('sign_up'), new_user_registration_path %> |
+        <%= link_to  t('sign_in'), new_user_session_path %>
+      </p>
+    <% end %>
+  </span>
+</nav>

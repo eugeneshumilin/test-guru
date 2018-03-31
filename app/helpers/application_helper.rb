@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  FLASH_TYPE = { alert: 'alert', notice: 'notice' }.freeze
+  FLASH_TYPE = { alert: 'danger', notice: 'primary' }.freeze
 
   def current_year
     Time.current.year

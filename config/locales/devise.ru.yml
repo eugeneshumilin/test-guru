@@ -82,9 +82,11 @@ ru:
         sign_in: "Войти"
       signed_in: "Вход в систему выполнен."
       signed_in_hello: "Здравствуйте, %{fullname}"
+      hello_email: "Привет, %{email}"
       signed_out: "Выход из системы выполнен."
       already_signed_out: "Выход из системы выполнен."
     shared:
+      minimum_password_length: "(Минимум %{count} символов)"
       links:
         back: "Назад"
         didn_t_receive_confirmation_instructions: "Не получили подтверждение?"
