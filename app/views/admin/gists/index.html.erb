@@ -1,0 +1,13 @@
+<table class="table mt-5">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th><%= t('activerecord.models.question') %></th>
+      <th>Gist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @gists %>
+  </tbody>
+</table>
+<%= link_to t('back'), admin_tests_path %>

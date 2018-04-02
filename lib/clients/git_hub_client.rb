@@ -1,7 +1,6 @@
 class GitHubClient
 
-  ROOT_ENDPOINT = 'https://api.github.com'
-  ACCESS_TOKEN = '672327d88a336a109b74bd628da59943c71e2486'
+  ACCESS_TOKEN = '47177992f66c0db40943e2bd3f448988504c8459'
 
   def initialize
     @http_client = setup_http_client
@@ -14,6 +13,6 @@ class GitHubClient
   private
 
   def setup_http_client
-    Octokit::Client.new(:access_token => ACCESS_TOKEN)
+    Octokit::Client.new(access_token: ACCESS_TOKEN)
   end
 end

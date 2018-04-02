@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      question: "Вопрос"
 
     attributes:
       test:

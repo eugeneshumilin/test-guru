@@ -8,6 +8,7 @@ en:
   delete: "Delete"
   sign_up: "sign up"
   sign_in: "login"
+  gist_description: "%{title} question"
 
   helpers:
     submit:

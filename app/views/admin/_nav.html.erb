@@ -1,6 +1,7 @@
 <nav class="navbar navbar-dark bg-primary">
   <%= link_to t('.header'), admin_tests_path, class: 'navbar-brand' %>
   <%= link_to t('.all_tests'), root_path, class: 'navbar-brand' %>
+  <%= link_to 'Gists', admin_gists_path, class: 'navbar-brand' %>
   <span class="navbar-text">
      <p>Welcome,
         <b><%= current_user.email %></b>

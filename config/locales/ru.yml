@@ -8,6 +8,7 @@ ru:
   delete: "Удалить"
   sign_up: "Зарегистрироваться"
   sign_in: "Войти"
+  gist_description: "Вопрос к тесту %{title}"
 
   layouts:
     navbar:
