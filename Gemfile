@@ -45,6 +45,10 @@ gem "octokit", "~> 4.0"
 
 gem 'rails-i18n', '~> 5.0.0'
 
+# ENVIRONMENT VARIABLES
+
+gem 'dotenv-rails'
+
 # UI
 
 gem 'jquery-rails'

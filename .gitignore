@@ -23,3 +23,5 @@
 .byebug_history
 
 rubocop.yml
+
+.env
