@@ -18,6 +18,7 @@
         <%= b.label %>
       </p>
       <% end %>
+      <p><%= link_to 'Gist question', gist_test_passage_path(@test_passage), method: :post %></p>
       <p><%= form.submit 'Next', class: 'btn btn-primary' %></p>
     <% end %>
   </div>
