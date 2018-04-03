@@ -36,9 +36,18 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '~> 4.0'
 
+# NETWORKING
+
+gem 'faraday'
+gem "octokit", "~> 4.0"
+
 # LOCALIZATION
 
 gem 'rails-i18n', '~> 5.0.0'
+
+# ENVIRONMENT VARIABLES
+
+gem 'dotenv-rails'
 
 # UI
 

@@ -8,6 +8,7 @@ en:
   delete: "Delete"
   sign_up: "sign up"
   sign_in: "login"
+  gist_description: "%{title} question"
 
   helpers:
     submit:
@@ -33,6 +34,9 @@ en:
   test_passages:
     result:
       header: "The %{title} test was completed!"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
 
   shared:
     errors:

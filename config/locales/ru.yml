@@ -8,6 +8,7 @@ ru:
   delete: "Удалить"
   sign_up: "Зарегистрироваться"
   sign_in: "Войти"
+  gist_description: "Вопрос к тесту %{title}"
 
   layouts:
     navbar:
@@ -37,6 +38,9 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+    gist:
+      success: "Gist успешно сохранен %{link}"
+      failure: "Во время сохранения gist произошла ошибка"
 
   shared:
     errors:

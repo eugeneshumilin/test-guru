@@ -1,13 +1,13 @@
-<h1 class='text-center'>Passing the <%= @test_passage.test.title %></h1>
+<h3 class='text-center mt-3'>Passing the <%= @test_passage.test.title %></h3>
 
-<h2 class="text-center">
+<h4 class="text-center mt-4">
   <%= @test_passage.current_question.body %>
-</h2>
+</h4>
 
-<h3 class="text-center">
+<p class="text-center">
   question <%= @test_passage.current_question_number %> of
   <%= @test_passage.questions_number %>
-</h3>
+</p>
 
 <div class="card">
   <div class="card-body">
@@ -18,6 +18,7 @@
         <%= b.label %>
       </p>
       <% end %>
+      <p><%= link_to 'Gist question', gist_test_passage_path(@test_passage), method: :post %></p>
       <p><%= form.submit 'Next', class: 'btn btn-primary' %></p>
     <% end %>
   </div>
