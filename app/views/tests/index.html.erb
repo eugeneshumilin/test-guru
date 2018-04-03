@@ -1,7 +1,11 @@
 <h3 class='mt-5 mb-3 text-center'><%= t('.header') %></h3>
 <table class="table">
   <tr>
-    <th><%= t('.title') %></th>
+    <th class="sort-by-title pointer">
+      <%= t('.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
     <th><%= t('.level') %></th>
     <th><%= t('.questions') %></th>
     <th><%= t('.action') %></th>
