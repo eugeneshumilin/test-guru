@@ -60,6 +60,8 @@ en:
         action: "Action"
       form:
         selector: "Select category"
+      form_inline:
+        submit: "Ok"
 
 
   tests_mailer:
