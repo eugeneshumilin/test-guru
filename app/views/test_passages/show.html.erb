@@ -4,10 +4,20 @@
   <%= @test_passage.current_question.body %>
 </h4>
 
-<p class="text-center">
-  question <%= @test_passage.current_question_number %> of
-  <%= @test_passage.questions_number %>
-</p>
+<div class="progress mb-2">
+  <%= content_tag :div,
+                  class: 'progress-bar progress-bar-striped bg-info',
+                  data: {
+                    question_number: @test_passage.current_question_number,
+                    count_of_questions: @test_passage.questions_number
+                  } do %>
+                      <span>
+                        Вопрос №
+                        <%= @test_passage.current_question_number %> из
+                        <%= @test_passage.questions_number %>
+                      </span>
+  <% end %>
+</div>
 
 <div class="card">
   <div class="card-body">
