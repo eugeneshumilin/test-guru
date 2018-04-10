@@ -10,6 +10,12 @@ en:
   sign_in: "login"
   gist_description: "%{title} question"
 
+  layouts:
+    navbar:
+      admin_root: "Admin panel"
+    footer:
+      feedback: 'Contact us'
+
   helpers:
     submit:
       test:
@@ -67,3 +73,14 @@ en:
   tests_mailer:
     compledet_test:
       subject: "You just completed the TestGuru test!"
+
+  feedbacks:
+    new:
+      header: 'Contact us'
+    form:
+      send_email: 'Send'
+    create:
+      success: 'Successfully sent'
+
+
+
