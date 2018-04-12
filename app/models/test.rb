@@ -4,7 +4,7 @@ class Test < ApplicationRecord
   validates :title, uniqueness: { scope: :level }
 
   has_many :questions, dependent: :destroy
-  has_many :test_passages, , dependent: :destroy
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
   belongs_to :author, class_name: 'User'
   belongs_to :category, optional: true
