@@ -15,8 +15,8 @@ categories = Category.create([
                              ])
 
 users = User.create([
-                      { password_digest: 'pas1', email: 'aaa@bbb.com' },
-                      { password_digest: 'pas2', email: 'aaa@bbb1.com' }
+                      { email: 'user1@example.com', password: '123456', password_confirmation: '123456', first_name: 'Иван', last_name: 'Иванов' },
+                      { email: 'user2@example.com', password: '123456', password_confirmation: '123456', first_name: 'Петр', last_name: 'Петров' }
                     ])
 
 tests = Test.create([

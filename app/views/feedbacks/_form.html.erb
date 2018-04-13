@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+  <div class="col col-md-4">
+    <%= form_with model: feedback, local: true do |form| %>
+      <div class="form-group">
+        <%= render 'shared/errors', resource: feedback %>
+
+        <p>
+          <%= form.label :title %>
+          <%= form.text_field :title, class: 'form-control'  %>
+        </p>
+
+        <p>
+          <%= form.label :body %>
+          <%= form.text_area :body, class: 'form-control' %>
+        </p>
+
+        <%= form.submit t('.send_email'), class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+    <%= link_to t('back'), root_path %>
+  </div>
+</div>

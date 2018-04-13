@@ -13,6 +13,8 @@ ru:
   layouts:
     navbar:
       admin_root: "Панель администратора"
+    footer:
+      feedback: 'Напишите нам'
 
   helpers:
     submit:
@@ -78,3 +80,11 @@ ru:
   tests_mailer:
     compledet_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  feedbacks:
+    new:
+      header: 'Написать нам'
+    form:
+      send_email: 'Отправить'
+    create:
+      success: 'Письмо отправлено!'
