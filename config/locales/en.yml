@@ -9,6 +9,7 @@ en:
   sign_up: "sign up"
   sign_in: "login"
   gist_description: "%{title} question"
+  sure?: 'Are you sure?'
 
   layouts:
     navbar:
