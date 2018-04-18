@@ -5,7 +5,7 @@ class BadgeOptionsService
   end
 
   def call
-    Badge.all.each do |badge|
+    Badge.find_each do |badge|
       case badge.rule_number
       when 1
         add_badge!(badge) if all_tests_category?(badge.rule_body)
@@ -39,8 +39,6 @@ class BadgeOptionsService
   end
 
   def test_special_level?(level)
-    if @test_passage.passed
-      @test_passage.test.level == level
-    end
+    @test_passage.test.level == level if @test_passage.passed
   end
 end

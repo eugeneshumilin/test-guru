@@ -69,8 +69,6 @@ class TestPassage < ApplicationRecord
   end
 
   def before_update_test_passed
-    if completed?
-      self.passed = successfull_test? ? true : false
-    end
+    self.passed = test_passed? if completed?
   end
 end

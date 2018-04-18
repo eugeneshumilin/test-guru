@@ -1,5 +1,5 @@
 class BadgesController < ApplicationController
   def index
-    @badges = current_user.badges.distinct
+    @badges = current_user.badges
   end
 end
