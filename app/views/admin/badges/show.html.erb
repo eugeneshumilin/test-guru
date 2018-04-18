@@ -1,0 +1,11 @@
+<%= image_tag(@badge.image) %>
+<p>
+  <%= @badge.title %>
+</p>
+
+<p>
+  <%= @badge.rule_body %>
+</p>
+
+<%= link_to t('edit'), edit_admin_badge_path(@badge) %> |
+<%= link_to t('back'), admin_root_path %>
