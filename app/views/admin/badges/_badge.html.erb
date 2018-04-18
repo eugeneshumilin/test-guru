@@ -1,5 +1,5 @@
 <tr>
-  <td><%= image_tag(badge.image) %></td>
+  <td><%= image_tag((badge.image), class: 'rounded-circle size-200px') %></td>
   <td><%= badge.title %></td>
   <td><%= link_to t('show'), admin_badge_path(badge) %></td>
   <td><%= link_to t('edit'), edit_admin_badge_path(badge) %></td>
