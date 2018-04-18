@@ -7,6 +7,11 @@ ru:
     attributes:
       test:
         title: "Название"
+      badge:
+        name: 'Название'
+        image: 'Бейдж'
+        rule_number: 'Правило'
+        rule_body: 'Описание'
 
     errors:
       messages:

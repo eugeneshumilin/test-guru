@@ -13,6 +13,7 @@ ru:
   layouts:
     navbar:
       admin_root: "Панель администратора"
+      my_badges: 'Мои достижения'
     footer:
       feedback: 'Напишите нам'
 
@@ -74,6 +75,19 @@ ru:
         selector: "Выберите категорию"
       form_inline:
         submit: "Ок"
+      badges:
+        index:
+          all_badges: 'Все достижения'
+          new_badge: 'Новое достижение'
+          image: 'Значок'
+          name: 'Название'
+          actions: 'Действия'
+        destroy:
+          success_destroy: 'Бейдж успешно удален'
+        update:
+          success_update: 'Бейдж успешно обновлен'
+        create:
+          success_create: 'Бейдж создан'
 
 
 
@@ -88,3 +102,9 @@ ru:
       send_email: 'Отправить'
     create:
       success: 'Письмо отправлено!'
+
+  badges:
+    index:
+      my_badges: 'Мои бейджи'
+      image: 'Бейдж'
+      name: 'Название'
