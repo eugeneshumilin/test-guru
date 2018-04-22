@@ -6,13 +6,13 @@ class BadgeOptionsService
 
   def call
     Badge.find_each do |badge|
-      case badge.rule_number
-      when 1
-        add_badge!(badge) if all_tests_category?(badge.rule_body)
-      when 2
-        add_badge!(badge) if test_first_try?(badge.rule_body)
-      when 3
-        add_badge!(badge) if test_special_level?(badge.rule_body.to_i)
+      case badge.rule
+      when '1'
+        add_badge!(badge) if all_tests_category?(badge.rule_parameter)
+      when '2'
+        add_badge!(badge) if test_first_try?(badge.rule_parameter)
+      when '3'
+        add_badge!(badge) if test_special_level?(badge.rule_parameter.to_i)
       end
     end
   end
@@ -25,9 +25,7 @@ class BadgeOptionsService
 
   def all_tests_category?(category)
     if @test_passage.test.category.title == category
-      corrects_count = TestPassage.correct_passed_tests(@user)
-                                  .pluck('DISTINCT test_id')
-                                  .count
+      corrects_count = @user.correct_passed_tests.pluck('DISTINCT test_id').count
       Category.find_by(title: category).tests.count == corrects_count
     end
   end

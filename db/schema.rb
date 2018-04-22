@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20180418193506) do
   create_table "badges", force: :cascade do |t|
     t.string "title"
     t.text "image"
-    t.integer "rule_number"
-    t.text "rule_body"
+    t.string "rule"
+    t.string "rule_parameter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20180418193506) do
     t.integer "correct_questions", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "passed"
+    t.boolean "passed", default: false, null: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"

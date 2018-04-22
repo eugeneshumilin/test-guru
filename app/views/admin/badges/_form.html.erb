@@ -16,17 +16,17 @@
         </p>
 
         <p>
-          <%= form.label :rule_number %>
-          <%= form.select :rule_number, options_for_select([
+          <%= form.label :rule %>
+          <%= form.select :rule, options_for_select([
                                                       ['После прохождения всех тестов категории', 1],
                                                       ['После прохождения теста с первой попытки', 2],
                                                       ['После прохождения теста определенного уровня', 3]
-                                                    ], selected: @badge.rule_number), { prompt: true }, { class: 'form-control' }  %>
+                                                    ], selected: @badge.rule), { prompt: true }, { class: 'form-control' }  %>
         </p>
 
         <p>
-          <%= form.label :rule_body %>
-          <%= form.text_field :rule_body, class: 'form-control' %>
+          <%= form.label :rule_parameter %>
+          <%= form.text_field :rule_parameter, class: 'form-control' %>
         </p>
 
         <p><%= form.submit class: 'btn btn-primary' %></p>

@@ -21,4 +21,8 @@ class User < ApplicationRecord
   def admin?
     is_a?(Admin)
   end
+
+  def correct_passed_tests
+    test_passages.where(passed: true)
+  end
 end
