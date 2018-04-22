@@ -5,7 +5,7 @@ class BadgeOptionsService
   end
 
   def call
-    return unless @test_passage.passed
+    return false unless @test_passage.passed
     Badge.find_each do |badge|
       case badge.rule
       when '1'
