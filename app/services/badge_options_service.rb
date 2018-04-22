@@ -38,6 +38,11 @@ class BadgeOptionsService
   end
 
   def test_special_level?(level)
-    @test_passage.test.level == level if @test_passage.passed
+    tests_count_by_level = Test.where(level: level).count
+    user_tests_count_by_level = 0
+    @user.correct_passed_tests.each do |test_passage|
+      user_tests_count_by_level += 1 if test_passage.test.level == level
+    end
+    tests_count_by_level == user_tests_count_by_level
   end
 end
