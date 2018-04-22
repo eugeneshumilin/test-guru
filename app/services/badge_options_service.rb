@@ -5,6 +5,7 @@ class BadgeOptionsService
   end
 
   def call
+    return unless @test_passage.passed
     Badge.find_each do |badge|
       case badge.rule
       when '1'
@@ -24,7 +25,7 @@ class BadgeOptionsService
   end
 
   def all_tests_category?(category)
-    if @test_passage.test.category.title == category
+    if @test_passage.test.category_id == Category.where(title: category).first.id
       corrects_count = @user.correct_passed_tests.pluck('DISTINCT test_id').count
       Category.find_by(title: category).tests.count == corrects_count
     end
