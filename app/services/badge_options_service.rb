@@ -5,7 +5,7 @@ class BadgeOptionsService
   end
 
   def call
-    return false unless @test_passage.passed
+    return unless @test_passage.passed
     Badge.find_each do |badge|
       case badge.rule
       when '1'
@@ -25,7 +25,7 @@ class BadgeOptionsService
   end
 
   def all_tests_category?(category)
-    if @test_passage.test.category_id == Category.where(title: category).first.id
+    if @test_passage.test.category_id == Category.find_by(title: category).id
       corrects_count = @user.correct_passed_tests.pluck('DISTINCT test_id').count
       Category.find_by(title: category).tests.count == corrects_count
     end
@@ -39,10 +39,6 @@ class BadgeOptionsService
 
   def test_special_level?(level)
     tests_count_by_level = Test.where(level: level).count
-    user_tests_count_by_level = 0
-    @user.correct_passed_tests.each do |test_passage|
-      user_tests_count_by_level += 1 if test_passage.test.level == level
-    end
-    tests_count_by_level == user_tests_count_by_level
+    tests_count_by_level == @user.correct_passed_tests_count_by_level(level)
   end
 end

@@ -25,4 +25,8 @@ class User < ApplicationRecord
   def correct_passed_tests
     test_passages.where(passed: true)
   end
+
+  def correct_passed_tests_count_by_level(level)
+    correct_passed_tests.joins(:test).where(tests: { level: level }).count
+  end
 end
