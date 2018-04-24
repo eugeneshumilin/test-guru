@@ -9,10 +9,12 @@ en:
   sign_up: "sign up"
   sign_in: "login"
   gist_description: "%{title} question"
+  sure?: 'Are you sure?'
 
   layouts:
     navbar:
       admin_root: "Admin panel"
+      my_badges: 'My badges'
     footer:
       feedback: 'Contact us'
 
@@ -68,6 +70,19 @@ en:
         selector: "Select category"
       form_inline:
         submit: "Ok"
+    badges:
+      index:
+        all_badges: 'All badges'
+        new_badge: 'New badge'
+        image: 'Badge'
+        name: 'Name'
+        actions: 'Actions'
+      destroy:
+        success_destroy: 'Deletion of success was successful'
+      update:
+        success_update: 'Successfully updated'
+      create:
+        success_create: 'A new badge was created'
 
 
   tests_mailer:
@@ -81,6 +96,12 @@ en:
       send_email: 'Send'
     create:
       success: 'Successfully sent'
+
+  badges:
+    index:
+      my_badges: 'My badges'
+      image: 'Badge'
+      name: 'Name'
 
 
 

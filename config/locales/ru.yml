@@ -9,10 +9,12 @@ ru:
   sign_up: "Зарегистрироваться"
   sign_in: "Войти"
   gist_description: "Вопрос к тесту %{title}"
+  sure?: 'Вы уверены?'
 
   layouts:
     navbar:
       admin_root: "Панель администратора"
+      my_badges: 'Мои достижения'
     footer:
       feedback: 'Напишите нам'
 
@@ -53,6 +55,19 @@ ru:
         other: "Обнаружено %{count} ошибки"
 
   admin:
+    badges:
+        index:
+          all_badges: 'Все достижения'
+          new_badge: 'Новое достижение'
+          image: 'Значок'
+          name: 'Название'
+          actions: 'Действия'
+        destroy:
+          success_destroy: 'Бейдж успешно удален'
+        update:
+          success_update: 'Бейдж успешно обновлен'
+        create:
+          success_create: 'Бейдж создан'
     nav:
       header: "Административная панель"
       welcome: "Добро пожаловать %{name}"
@@ -74,6 +89,7 @@ ru:
         selector: "Выберите категорию"
       form_inline:
         submit: "Ок"
+    
 
 
 
@@ -88,3 +104,9 @@ ru:
       send_email: 'Отправить'
     create:
       success: 'Письмо отправлено!'
+
+  badges:
+    index:
+      my_badges: 'Мои бейджи'
+      image: 'Бейдж'
+      name: 'Название'

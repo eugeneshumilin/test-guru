@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_save :before_save_set_next_question
+  before_update :before_update_test_passed
 
   def successfull_test?
     test_result_in_percent >= 85
@@ -56,10 +57,14 @@ class TestPassage < ApplicationRecord
   end
 
   def before_save_set_next_question
-    self.current_question = if current_question.nil?
+    self.current_question = if completed?
                               test.questions.first
                             else
                               next_question
                             end
+  end
+
+  def before_update_test_passed
+    self.passed = test_passed? if completed?
   end
 end
