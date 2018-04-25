@@ -5,6 +5,7 @@ class TestPassage < ApplicationRecord
 
   before_save :before_save_set_next_question
   before_update :before_update_test_passed
+  before_update :before_update_check_timeleft
 
   def successfull_test?
     test_result_in_percent >= 85
@@ -15,7 +16,9 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    unless time_is_over?
+      self.correct_questions += 1 if correct_answer?(answer_ids)
+    end
     save!
   end
 
@@ -31,7 +34,23 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def timer_seconds
+    (expires_at - Time.now).to_i
+  end
+
   private
+
+  def expires_at
+    created_at + test.timeleft.minutes
+  end
+
+  def time_is_over?
+    expires_at < Time.now
+  end
+
+  def before_update_check_timeleft
+    self.current_question = nil if time_is_over?
+  end
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
@@ -65,6 +84,6 @@ class TestPassage < ApplicationRecord
   end
 
   def before_update_test_passed
-    self.passed = test_passed? if completed?
+    self.passed = successfull_test? if completed?
   end
 end
