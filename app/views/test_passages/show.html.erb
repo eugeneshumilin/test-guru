@@ -4,6 +4,10 @@
   <%= @test_passage.current_question.body %>
 </h4>
 
+<div>
+  Осталось: <%= content_tag :span, '', class: 'timer', data: {timeleft: @test_passage.timer_seconds} %>
+</div>
+
 <div class="progress mb-2">
   <%= content_tag :div,
                   class: 'progress-bar progress-bar-striped bg-info',

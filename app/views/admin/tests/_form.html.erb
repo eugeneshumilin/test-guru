@@ -12,6 +12,11 @@
   </p>
 
   <p>
+    <%= form.label :timeleft %>
+    <%= form.number_field :timeleft, class: 'form-control' %>
+  </p>
+
+  <p>
     <%= form.label :category_id %><br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: t('.selector') %>
   </p>
